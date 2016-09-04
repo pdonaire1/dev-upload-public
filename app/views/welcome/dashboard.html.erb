@@ -1,0 +1,18 @@
+<%# render "login" %>
+<%# render "register" %>
+<% content_for :body_title do %>
+  <%= raw t("controller."+controller_name) %>
+<% end %>
+
+
+<% if user_signed_in? %>
+    <%= link_to "editar", edit_user_registration_path(current_user) %>
+    <%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete %>
+    
+    <%= link_to dashboard_path do %>
+        <i class="fa fa-dashboard fa-fw"></i> <%= t("buttons.dashboard") %>
+    <% end %>
+<% else %>
+    <%= link_to "ingresar", new_user_session_path %>
+    <%= link_to "registrarse", new_user_registration_path %>
+<% end %>

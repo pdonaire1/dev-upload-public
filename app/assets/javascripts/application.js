@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree ./channels
+//= require cable
+//= require_tree ./cdns
+//= require_tree ./menu
+
+
+

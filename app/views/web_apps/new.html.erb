@@ -1,0 +1,8 @@
+<% content_for :body_title do %>
+  <%= raw t("controller.new_webapp") %>
+<% end %>
+
+
+<%= render 'form', web_app: @web_app %>
+
+<%= link_to 'Back', web_apps_path %>

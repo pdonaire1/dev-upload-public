@@ -4,11 +4,64 @@
     <title>DevUpload</title>
     <%= csrf_meta_tags %>
 
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <%= render "layouts/menu" %>
+
+      
+      <div id="page-wrapper">
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header css-typing">
+              <%= yield :body_title %>
+            </h1>
+            <!-- ALERTS -->
+            <% if flash[:success] %>
+              <div class="alert alert-success">
+                <strong><%= t 'layout.success' %></strong> <%= flash[:success] %>
+              </div>
+            <% end %>
+            <% if flash[:notice] %>
+              <div class="alert alert-info">
+                <strong><%= t 'layout.notice' %></strong> <%= flash[:notice] %>
+              </div>
+            <% end %>
+            <% if flash[:warning] %>
+              <div class="alert alert-warning">
+                <strong><%= t 'layout.warning' %></strong> <%= flash[:warning] %>
+              </div>
+            <% end %>
+            <% if flash[:error] %>
+              <div class="alert alert-danger">
+                <strong><%= t 'layout.error' %></strong> <%= flash[:error] %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-9 col-md-9" style="">
+            <%= yield %>
+          </div>
+          <div class="col-md-3 text-center" >
+            <%= render "layouts/advertisements" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer" >
+      &copy; Copyright 2016, Created by: <a href="http://pdonaire1.github.io/" target="_blank">@pdonaire1</a>
+      <span style="font-size: 60%;">Thanks to: SB Admin v2.0</span>
+    </div>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :extra_js %>
   </body>
 </html>

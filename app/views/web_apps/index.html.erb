@@ -1,0 +1,51 @@
+<% content_for :body_title do %>
+  <%= raw t("controller."+controller_name) %>
+<% end %>
+
+<div class="row">
+  <% @web_apps.each do |web_app| %>
+    <div class="col-xs-12 col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <i class="fa fa-certificate"></i>
+          <%= web_app.page %>
+        </div>
+        <div class="panel-body">
+          <%= web_app.description %><br>
+          <b>Test Api Key:</b> 
+          <%= text_field_tag :test_api_key, web_app.test_api_key, class: "form-control"%>
+          <br>
+          <b>Api Key:</b>
+          <div class="input-group">
+            <%= password_field_tag :api_key, web_app.api_key, class: "form-control"%>
+            <div class="input-group-addon" id="show-api-key" style="cursor: pointer;">
+              <i class="fa fa-eye" ></i>
+            </div>
+          </div>
+          <br>
+        </div>
+        <div class="panel-footer">
+          <%#= link_to 'Show', web_app %>
+          <% @web_app = web_app %>
+          <%= render "layouts/destroy_modal", collection: @web_app %>
+          <%= link_to t('buttons.edit'), edit_web_app_path(web_app), class: "btn btn-primary" %>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#destroy_<%=@web_app.id%>">
+            <%= t("buttons.destroy") %>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Web App', new_web_app_path, class: "btn btn-success" %>
+<br>
+<br>
+<br>
+
+<% content_for :extra_js do %>
+  <%= javascript_include_tag "controllers/web_app/web_app_index" %>
+<% end %>

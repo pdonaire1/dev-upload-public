@@ -1,2 +1,36 @@
 es:
-  hello: "Hola Mundo"
+  controller:
+    devupload: <b><span class="text-light-green">Dev</span><span class="text-light-red">Upload</span></b>
+    welcome: Bienvenido a <b><span class="text-light-green">Dev</span><span class="text-light-red">Upload</span></b>
+    registrations: Registrar usuario
+    sessions: Entrar
+    edit_profile: Editar perfil
+    forgot_password: Recuperar contraseña
+    sign_off: Cerrar sesión
+    new_webapp: Nueva Web App
+    webapp:
+      webapps: Web Apps
+      page: Página Web
+      description: Descripción
+  validations:
+    user:
+      username_short: Nombre de usuario muy corto
+      username_long: Nombre de usuario muy largo
+      username_invalid: Nombre de usuario es inválido
+  buttons:
+    dashboad: Dashboad
+    save: Guardar
+    edit: Editar
+    destroy: Eliminar
+    destroy_object: ¿Desea eliminar %{obj}?
+    close: Cerrar
+  layout:
+    success: Proceso exitoso!
+    notice: Noticia!
+    warning: Alerta!
+    error: Error
+    image: Imagen
+    images: Imagenes
+    unilimited: Ilimitado
+  advertisements: 
+    donate: Por favor, ayudenos mejorar a <b><span class="text-light-green">Dev</span><span class="text-light-red">Upload</span></b>.

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  page: 
+  user: one
+  api_key: MyString
+  test_api_key: MyString
+
+two:
+  page: 
+  user: two
+  api_key: MyString
+  test_api_key: MyString

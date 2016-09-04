@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="destroy_<%=@web_app.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+        	<%= t ('buttons.destroy_object'), obj: @web_app.page %>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <%= @web_app.description %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+        	<%= t("buttons.close") %>
+        </button>
+        <%= link_to t("buttons.destroy"), @web_app, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>  

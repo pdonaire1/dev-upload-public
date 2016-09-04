@@ -15,7 +15,46 @@
 
  */
 
+$dark-blue: #4789C2;
+$light-green: #6BBF9B;
+$light-red: #CB5F5F;
 
-@import "twitter/bootstrap/grid.less";
-@import "materialize";
+.text-dark-blue {
+  color: $dark-blue;
+}
+.text-light-green {
+  color: $light-green;
+}
+.text-light-red {
+  color: $light-red;
+}
 
+.css-typing {
+    width: 100%;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  /*bottom: 0;*/
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.text-little {
+  font-size: 72% !important;
+}

@@ -29,10 +29,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# gem "spring-commands-rspec"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pg'
+  gem "rspec"
+  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl", "~> 4.0"
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'capybara', '~> 2.5'
 end
 
 group :development do
@@ -47,5 +54,16 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
-gem 'materialize-sass'
+
+#gem 'materialize-sass'
+gem 'devise'
+gem "paperclip", "~> 5.0.0"
+# Paperclip source:
+# http://www.rubydoc.info/gems/paperclip/5.1.0#post-processing
+# http://tutorials.pluralsight.com/ruby-ruby-on-rails/handling-file-upload-using-ruby-on-rails-5-api
+
+# attache_api source:
+# https://rubygems.org/gems/attache_api
+
+# Redimentionate an image source:
+# http://www.imagemagick.org/script/command-line-processing.php#geometry
